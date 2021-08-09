@@ -1,51 +1,89 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+
+    --header-height: 7vh;
+    --content-height: 93vh;
+
+    --bg-hover: rgb(217, 217, 217);
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
+/* --- Header --- */
+header {
+    height: var(--header-height);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
+header a {
+    height: calc(3 / 4 * var(--header-height));
+    width: calc(3 / 4 * var(--header-height));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1000000px;
+    transition: .3s;
+}
+
+header img {
+    height: calc(9 / 16 * var(--header-height));
+    width: auto;
+}
+
+header a:hover {
+    background: var(--bg-hover);
+}
+
+
+/* --- Main --- */
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
+    height: var(--content-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
 }
 
-p {
-  text-align: center;
-  font-size: x-large;
+.disclaimer {
+    font-size: larger;
+    text-align: center;
 }
 
-#img {
-  position: relative;
-  max-width: 80vw;
-  max-height: 50vh;
-  border-radius: 5px;
+.disclaimer strong {
+    font-size: larger;
 }
 
-button {
-  background: orange;
-  color: white;
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  font-size: large;
-  border-radius: 5px;
-  transition: 0.3s;
-  cursor: pointer;
+.koalaImg {
+    max-width: 90vw;
+    max-height: 50vh;
+    border-radius: 5px;
 }
 
-button:hover {
-  transform: scale(1.1);
-  box-shadow: 3px 3px 10px grey;
+.otherKoalaBtn {
+    --btn-color: orange;
+
+    background: transparent;
+    color: var(--btn-color);
+    border: 3px solid var(--btn-color);
+    outline: none;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.otherKoalaBtn:hover {
+    background: var(--btn-color);
+    color: aliceblue;
 }
