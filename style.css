@@ -1,44 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    font-family: "Poppins", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 
-    --header-height: 7vh;
-    --content-height: 93vh;
+    --footer-height: 6vh;
+    --content-height: calc(100vh - var(--footer-height));
 
     --bg-hover: rgb(217, 217, 217);
-}
-
-
-/* --- Header --- */
-header {
-    height: var(--header-height);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-header a {
-    height: calc(3 / 4 * var(--header-height));
-    width: calc(3 / 4 * var(--header-height));
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 1000000px;
-    transition: .3s;
-}
-
-header img {
-    height: calc(9 / 16 * var(--header-height));
-    width: auto;
-}
-
-header a:hover {
-    background: var(--bg-hover);
 }
 
 
@@ -69,7 +41,7 @@ main {
 }
 
 .otherKoalaBtn {
-    --btn-color: orange;
+    --btn-color: #0066ff;
 
     background: transparent;
     color: var(--btn-color);
@@ -79,11 +51,58 @@ main {
     font-size: large;
     font-weight: bolder;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: 0.2s;
     cursor: pointer;
 }
 
 .otherKoalaBtn:hover {
     background: var(--btn-color);
     color: aliceblue;
+}
+
+
+/* --- footer --- */
+footer {
+    height: var(--footer-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #252525;
+}
+
+footer p {
+    color: aliceblue;
+    font-size: larger;
+    font-weight: bolder;
+
+    margin-right: 15px;
+    padding-right: 20px;
+    border-right: aliceblue solid 1px;
+}
+
+footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 10px 0 10px;
+}
+
+footer svg {
+    height: calc(8 / 16 * var(--footer-height));
+    width: auto;
+    transition: .2s;
+    fill: #0066ff;
+}
+
+footer .instagram:hover svg {
+    fill: #e1306c;
+}
+
+footer .spotify:hover svg {
+    fill: #1DB954;
+}
+
+footer .github:hover svg {
+    fill: aliceblue;
 }
