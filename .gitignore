@@ -1,2 +1,5 @@
 # Webstorm
 .idea/
+
+# VSCode
+.vscode/
