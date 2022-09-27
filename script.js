@@ -1,9 +1,12 @@
 window.addEventListener("load", loadNamesFromURI, false);
 
+document.getElementById("share").addEventListener("click", shareBtnClick, false);
+
 document.getElementById("firstname").addEventListener("keyup", eventListener, false);
 document.getElementById("firstname").addEventListener("change", eventListener, false);
 document.getElementById("secondname").addEventListener("keyup", eventListener, false);
 document.getElementById("secondname").addEventListener("change", eventListener, false);
+
 
 const pairs = [     // pairs of names for which confetti will be displayed
     ["me", "myself"],
@@ -72,4 +75,18 @@ function eventListener(event) {
     let name1 = document.getElementById("firstname").value;
     let name2 = document.getElementById("secondname").value;
     updateNames(name1, name2);
+}
+
+function shareBtnClick(event) {
+    let name1 = document.getElementById("firstname").value;
+    let name2 = document.getElementById("secondname").value;
+    
+    if (name1 == "" && name2 == "") {
+        navigator.clipboard.writeText(`${window.location.href}`);
+    } else {
+        navigator.clipboard.writeText(`${window.location.href}?n1=${name1}&n2=${name2}`);
+    }
+
+    document.getElementById("share").classList.add("success");
+    setTimeout(() => document.getElementById("share").classList.remove("success"), 1000);
 }

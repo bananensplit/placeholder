@@ -43,10 +43,36 @@ main .description {
     margin-bottom: 10px;
 }
 
+main .result {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main #percent {
     font-size: x-large;
     font-weight: bold;
-    margin-top: 40px;
+}
+
+main #share {
+    width: 40px;
+    height: auto;
+    margin-left: 20px;
+    padding: 5px;
+    fill: #0066ff;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+main #share:hover {
+    fill: #69a5ff;
+}
+
+main #share.success {
+    background: #caffc6;
 }
 
 
