@@ -11,6 +11,10 @@ document.getElementById("secondname").addEventListener("change", eventListener, 
 const pairs = [     // pairs of names for which confetti will be displayed
     ["me", "myself"],
     ["i", "me"],
+    ["jeremiasz", "wiktoria"],
+    ["damian", "agnieszka"],
+    ["emlika", "franek"],
+    ["filip", "wiktoria"],
 ]
 
 
@@ -82,9 +86,9 @@ function shareBtnClick(event) {
     let name2 = document.getElementById("secondname").value;
     
     if (name1 == "" && name2 == "") {
-        navigator.clipboard.writeText(`${window.location.href}`);
+        navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}`);
     } else {
-        navigator.clipboard.writeText(`${window.location.href}?n1=${name1}&n2=${name2}`);
+        navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}?n1=${name1}&n2=${name2}`);
     }
 
     document.getElementById("share").classList.add("success");
