@@ -1,13 +1,12 @@
-otherKoala();
+const koalaApi = "https://some-random-api.com/img/koala";
 
 function otherKoala() {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let data = JSON.parse(this.responseText);
+  fetch(koalaApi)
+    .then((response) => response.json())
+    .then((data) => {
       document.getElementById("img").src = data.link;
-    }
-  };
-  xhttp.open("GET", "https://some-random-api.ml/img/koala", true);
-  xhttp.send();
+    })
+    .catch((error) => console.log(error));
 }
+
+otherKoala();
