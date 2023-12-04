@@ -9,6 +9,11 @@ const links = [
         github: "/tiss-cal-formatter",
     },
     {
+        name: "WhatsApp Chat Analysis 📈",
+        link: "/whatsapp-chat-analysis",
+        github: "/whatsapp-chat-analysis",
+    },
+    {
         name: "Rude Mr. Robot 🤖",
         link: "/ruderobot",
         github: "/Mr.-Ruderobot",
